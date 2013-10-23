@@ -1,0 +1,101 @@
+$toggle-group-option-line-height: 20px;
+$toggle-group-vertical-border-padding: 5px;
+$toggle-group-selected-border-size: 2px;
+
+@mixin toggle-group {
+    .toggle-group {
+        display: inline-block;
+        
+        .option {
+            @include unselectable;
+            cursor: pointer;
+            display: block;
+            border: 0;
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            color: $blue-light;
+            font-family: $font-family;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: $toggle-group-option-line-height;
+    
+            &:hover:not(.selected) {
+                color: $blue;
+            }
+            
+            &.selected {
+                color: $blue;
+            }
+            
+            &:focus {
+                outline: 0;
+            }
+        }
+    
+        &.horizontal {
+            line-height: $toggle-group-option-line-height;
+            
+            .option {
+                border-bottom: $toggle-group-selected-border-size solid transparent;
+    
+                &.selected {
+                    border-bottom-color: $blue;
+                }
+            }
+    
+            .option:not(:last-of-type) {
+                float: left;
+                margin-right: 15px;
+            }
+        }
+    
+        &.vertical {
+            .option {
+                border-left: $toggle-group-selected-border-size solid transparent;
+                padding-left: $toggle-group-vertical-border-padding;
+                margin-bottom: 5px;
+                line-height: $toggle-group-option-line-height - 5px;
+    
+                &.selected {
+                    border-left-color: $blue;
+                }
+            }
+    
+            .option:not(:last-of-type) {
+                padding-left: $field-padding-left;
+            }
+        }
+        
+        &.disabled {
+            .option {
+                cursor: default;
+                color: lighten($font-color, 40);
+    
+                &.active {
+                    color: darken(white, 10);
+                }
+            }
+        }
+        
+        @include toggle-group-size($field-height);
+        
+        &.small {
+            @include toggle-group-size($small-field-height);
+        }
+    }
+    
+    .vertical-toggle-group-sibling {
+        padding-left: $toggle-group-selected-border-size + $toggle-group-vertical-border-padding;
+    }
+}
+
+@mixin toggle-group-size($height) {
+    &.horizontal {
+        $vertical-padding: ($height - $toggle-group-option-line-height - 2*$toggle-group-selected-border-size)/2;
+        padding-top: $vertical-padding + $toggle-group-selected-border-size;
+        padding-bottom: $vertical-padding;
+        padding-left: $field-padding-left;
+        padding-right: $field-padding-right;
+    }
+}
