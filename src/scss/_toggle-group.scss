@@ -14,18 +14,18 @@ $toggle-group-selected-border-size: 2px;
             background: transparent;
             padding: 0;
             margin: 0;
-            color: $blue-light;
+            color: $blue;
             font-family: $font-family;
             font-size: 14px;
             font-weight: 400;
             line-height: $toggle-group-option-line-height;
     
             &:hover:not(.selected) {
-                color: $blue;
+                color: $blue-dark;
             }
             
             &.selected {
-                color: $blue;
+                color: $blue-dark;
             }
             
             &:focus {
@@ -40,7 +40,7 @@ $toggle-group-selected-border-size: 2px;
                 border-bottom: $toggle-group-selected-border-size solid transparent;
     
                 &.selected {
-                    border-bottom-color: $blue;
+                    border-bottom-color: $blue-dark;
                 }
             }
     
@@ -58,7 +58,7 @@ $toggle-group-selected-border-size: 2px;
                 line-height: $toggle-group-option-line-height - 5px;
     
                 &.selected {
-                    border-left-color: $blue;
+                    border-left-color: $blue-dark;
                 }
             }
     
