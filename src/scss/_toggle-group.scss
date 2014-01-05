@@ -35,9 +35,10 @@ $toggle-group-selected-border-size: 2px;
     
         &.horizontal {
             line-height: $toggle-group-option-line-height;
-            
+
             .option {
                 border-bottom: $toggle-group-selected-border-size solid transparent;
+                display: inline-block;
     
                 &.selected {
                     border-bottom-color: $blue-dark;
@@ -45,7 +46,6 @@ $toggle-group-selected-border-size: 2px;
             }
     
             .option:not(:last-of-type) {
-                float: left;
                 margin-right: 15px;
             }
         }
