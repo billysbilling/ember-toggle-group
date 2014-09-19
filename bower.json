@@ -1,6 +1,6 @@
 {
   "name": "ember-toggle-group",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://github.com/billysbilling/ember-toggle-group",
   "main": "src/js/toggle-group.js",
   "billy-builder": {
