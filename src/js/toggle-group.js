@@ -1,5 +1,5 @@
 module.exports = Em.Component.extend(require('ember-field-mixin'), {
-    template: require('../templates/toggle-group'),
+    layout: require('../templates/toggle-group'),
     
     classNameBindings: [':toggle-group', 'direction', 'disabled', 'small'],
 
